@@ -1,0 +1,40 @@
+{
+  "name": "opencode-terminal-notify",
+  "version": "1.0.0",
+  "description": "Desktop notifications through your terminal when opencode finishes a turn, asks a question or needs a permission.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./server": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "notifications",
+    "terminal",
+    "osc",
+    "agent-terminal"
+  ],
+  "homepage": "https://github.com/4nuva/opencode-terminal-notify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4nuva/opencode-terminal-notify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/4nuva/opencode-terminal-notify/issues"
+  },
+  "author": "4nuva",
+  "license": "MIT",
+  "engines": {
+    "opencode": ">=1.0.0"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
