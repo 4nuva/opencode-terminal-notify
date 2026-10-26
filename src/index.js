@@ -219,7 +219,9 @@ function writeSequence(seq) {
 
 export const TerminalNotify = async (ctx) => {
   const env = process.env;
-  const cwd = ctx.worktree || ctx.directory || "";
+  // directory is the folder the session was started in; worktree is its git
+  // root, and is "/" for a folder that is not a git repository.
+  const cwd = ctx.directory || ctx.worktree || "";
   const subagents = new Set();
   const roles = new Map();
   const lastAssistant = new Map();

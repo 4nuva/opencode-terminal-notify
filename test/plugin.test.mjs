@@ -85,6 +85,11 @@ test("the package exposes only the plugin factory", async () => {
   assert.deepEqual(Object.keys(mod), ["TerminalNotify"]);
 });
 
+test("the project folder names the title in a non-git folder", async () => {
+  const plugin = await load({ directory: "/work/my-app", worktree: "/" });
+  await plugin.event(permission());
+  assert.match(emitted(), /^\]777;notify;opencode · my-app;/);
+});
 test("a permission request notifies with the tool and command", async () => {
   const plugin = await load();
   await plugin.event(permission({ patterns: ["npm run deploy"] }));
